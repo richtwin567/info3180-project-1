@@ -30,6 +30,3 @@ class Property(db.Model):
         self.type = type
         self.description = description
         self.photo_path = photo_path
-
-
-db.create_all()
