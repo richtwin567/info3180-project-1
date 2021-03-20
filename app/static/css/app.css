@@ -201,3 +201,17 @@ button {
 	display: flex;
 	flex-direction: column;
 }
+
+.new-property button{
+	width:fit-content;
+}
+
+.success{
+	background-color: #008357;
+	color: white;
+}
+
+nav.bg-primary{
+	/* needed to override bootsrap */
+	background-color: var(--primary)!important;
+}
