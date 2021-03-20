@@ -8,7 +8,7 @@ import os
 from flask.helpers import send_from_directory
 from werkzeug.utils import secure_filename
 from app.forms import PropertyForm
-from app.model import Property, db
+from app.models import Property, db
 from app import app
 from flask import render_template, request, redirect, url_for, flash
 
