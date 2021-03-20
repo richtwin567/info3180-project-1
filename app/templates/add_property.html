@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="new-property">
+    <h1>Add New Property</h1>
+    <form action="{{ url_for('add_property') }}" method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+
+        <span>{{ form.title.label }} <span class="required">*</span> </span>
+        {{ form.title }}
+        <span>{{ form.description.label }} <span class="required">*</span> </span>
+        {{ form.description }}
+
+        <div class="form-grid">
+
+            <div><span>{{ form.bedroom_count.label }} <span class="required">*</span> </span>
+                {{ form.bedroom_count }}</div>
+            <div><span>{{ form.bathroom_count.label }} <span class="required">*</span></span>
+                {{ form.bathroom_count }}</div>
+            <div><span>{{ form.price.label }} <span class="required">*</span> </span>
+                {{ form.price }}</div>
+            <div><span>{{ form.type.label }} <span class="required">*</span> </span>
+                {{ form.type }}</div>
+            <div><span>{{ form.location.label }} <span class="required">*</span></span>
+            {{ form.location }}</div>
+
+        </div>
+
+
+        <span>{{ form.photo.label }} <span class="required">*</span> </span>
+        {{ form.photo }}
+
+        <button type="submit" class="btn secondary filled">Add Property</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="property-details">
+    <img src="{{ url_for('get_image', filename=prop.photo_path) }}" alt="{{ prop.title }}">
+    <div>
+    <h2>{{ prop.title }}</h2>
+    <div class="property-tags"><span class="chip secondary">{{ "${:,.2f}".format(prop.price) }}</span><span class="chip accent">{{ prop.type.value
+            }}</span></div>
+    <p class="property-desc">{{ prop.description }}</p>
+    <div class="property-stats">
+        <span>
+        {% include "bedroom_icon.html" %}
+        {{ prop.bedroom_count }} Bedrooms</span>
+        <span>
+            {% include "bathroom_icon.html" %}
+            {{ prop.bathroom_count }} Bathrooms
+        </span>
+        <span>
+            {% include "location_icon.html" %}
+            {{ prop.location }}
+        </span>
+    </div>
+    <button class="btn primary filled">Email Realtor</button>
+    </div>
+</div>
+{% endblock %}

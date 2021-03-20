@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Properties</h1>
+<div class="properties">
+    {% for prop in properties %}
+    <div class="property">
+        <img src="{{ url_for('get_image', filename=prop.photo_path) }}" alt="{{ prop.title }}">
+        <div class="property-text">
+            <h2>{{ prop.title }}</h2>
+            <div class="location">
+                {% include "location_icon.html" %}
+                {{ prop.location }}
+            </div>
+            <span class="chip secondary">{{ "${:,.2f}".format(prop.price) }}</span>
+        </div>
+        <a href="{{ url_for('view_property',propertyid=prop.id) }}" class="primary filled">View Property</a>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
